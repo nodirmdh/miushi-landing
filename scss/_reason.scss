@@ -1,0 +1,306 @@
+// reason begin
+.reason-head .title{
+    margin-bottom: 75px;
+    &:before,
+    &:after{
+        display: none;
+    }
+}
+
+.reason-slider{
+    @include flex(row,center,wrap,null);
+}
+
+.reason-slider-block{
+    flex-basis: 100%;
+    text-align: center;
+    margin-bottom: 40px;
+    outline: none;
+}
+
+.reason-slider-block-photo{
+    min-height: 75px;
+    img{
+        @include img;
+        margin: 0 auto;
+    }
+}
+
+.reason-slider-block-info{
+    margin-top: 30px;
+    @include text($openS,16px,none,none,$black,400,28.43px);	
+}
+// reason end
+
+
+// otziv begin
+.otziv-inner{
+    @include flex(row,space-between,wrap,null);
+}
+
+.otziv-head .title{
+    &:before{
+		@include position(absolute,20%,null,null,-80px,null);
+	}
+	&:after{
+		@include position(absolute,20%,-80px,null,null,null);
+	}
+}
+
+.otziv-inner-block{
+    flex-basis: 100%;
+    padding: 25px 14px;
+    border: 1px solid $newList;
+}
+
+.otziv-inner-block:nth-child(1){
+    margin-bottom: 40px;
+}
+
+.otziv-inner-block:nth-child(3){
+    display: none;
+}
+
+.otziv-inner-block-user{
+    @include flex(row,flex-start,nowrap,null);
+}
+
+.otziv-inner-block-user-name{
+    padding: 15px 0 0 20px;
+    p:nth-child(1){
+        @include text($openS,15px,none,none,$otzivText,700,null);	
+    }
+    p:nth-child(2){
+        @include text($openS,15px,none,none,$newList,600,28.43px);	
+    }
+}
+
+.otziv-inner-block-info{
+    margin: 35px 0 30px 0;
+    @include text($openS,14px,none,none,$black,400,18px);	
+}
+
+.otziv-inner-block-like{
+    margin-top: 35px;
+    padding: 15px 0;
+    border-top: 1px solid $newList;
+}
+
+.otziv-inner-block-like-heart,
+.otziv-inner-block-like-comment,
+.otziv-inner-block-like-vol{
+    margin-right: 20px;
+}
+
+.otziv-inner-block-like-heart__lab,
+.otziv-inner-block-like-vol{
+    color: $otzivIcon;
+}
+
+.otziv-inner-block-like-heart__in{
+    display: none;
+}
+
+.otziv-inner-block-like-heart__in:checked
+~ .otziv-inner-block-like-heart__lab{
+    color: $headerPrice;
+}
+
+.otziv-inner-block-like-comment{
+    @include text(null,14px,none,none,$otzivText,600,null);	
+    span{
+        color: $otzivIcon;
+        margin-right: 10px;
+    }
+}
+
+.otziv-inner-block__link{
+    display: inline-block;
+    width: 100%;
+    padding: 7px 0;
+    text-align: center;
+    background-color: $otzivText;
+    border-radius: 3px;
+    @include text($openS,14px,none,none,$white,600,null);	
+    span{margin-right: 10px;}
+}
+// otziv end
+
+// form begin
+.form{
+    background: url(../images/formBg1.png);
+    @include bg;
+    padding: 55px 0;
+}
+
+
+.form-inner-block-head{
+    p:nth-child(1){
+        @include text($openS,16px,none,none,$white,400,null);	 
+        margin-bottom: 15px;
+    }
+    p:nth-child(2){
+        @include text($lemon,44px,none,none,$white,400,null);
+    }
+}
+
+.form-inner-block-box-el{
+    @include flex(row,space-between,wrap,null);
+    margin: 30px 0 25px 0;
+}
+
+.form-inner-block-box-el__name,
+.form-inner-block-box-el__num{
+    flex-basis: 100%;
+    padding: 10px 15px ;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid $white;
+    @include text($openS,14px,none,none,$white,400,null);
+    &::placeholder{
+        color: $white;
+    }	 
+    &:focus{
+        background-color: rgba($white,0.2);
+    }
+}
+
+.form-inner-block-box-el__num{
+    margin: 20px 0 40px 0;
+}
+
+.form-inner-block-box-el__sub{
+    flex-basis: 100%;
+    padding: 17px;
+    @include text($openS,14px,uppercase,none,$white,600,null);
+    background-color: $headerLink;
+    border: none;
+    border-radius: 5px;
+}
+
+.form-inner-block-box__text{
+    @include text($openS,12px,none,none,$white,400,null);
+}
+// form end
+
+
+// company begin
+.company-head .title{
+    &:before,
+    &:after{
+        display: none;
+    }
+}
+
+.company-title{
+    @include text($openS,20px,none,none,$blockTitle,700,null);
+    margin-bottom: 40px;
+}
+
+.company-block-text{
+    @include text($openS,14px,none,none,$black,400,20px);
+    p{margin-bottom: 26px;}
+}
+
+.company-block-text__img{
+    @include img;
+    display: none;
+}
+// company end
+
+@include mediaQuery(min-width,768px) {
+    .reason-head .title{
+        &:before,
+        &:after{
+            display: block;
+        }
+    }
+
+    .reason-slider-block{
+        flex-basis: 28%;
+    }
+
+    .otziv-inner-block{
+        flex-basis: 348px;
+        padding: 35px;
+    }
+
+    .otziv-inner-block:nth-child(1){
+        margin: 0;
+    }
+
+    .form{
+        padding: 78px 0 83px 0;
+        background: url(../images/formBg2.png);
+        @include bg;
+    }
+
+    .form-inner-block-head{
+        p:nth-child(2){
+            @include text($lemon,54px,none,none,$white,400,null);
+        }
+    }
+    
+    .form-inner-block-box-el{
+        margin-bottom: 38px;
+    }
+
+    .form-inner-block-box-el__name,
+    .form-inner-block-box-el__num,
+    .form-inner-block-box-el__sub{
+        flex-basis: 222px;
+    }
+
+    .form-inner-block-box-el__num{
+        margin: 0;
+    }
+
+
+    .company-head .title{
+        &:before,
+        &:after{
+            display: block;
+        }
+    }
+
+    .company-block-text__img{
+        display: block;
+        float: right;
+        margin: 0 0 40px 30px;
+    }
+
+}
+
+@include mediaQuery(min-width,1200px){
+    .reason-slider{
+        justify-content: space-between;
+    }
+
+    .reason-slider-block{
+        flex-basis: 19%;
+        margin: 0;
+    }
+
+    .otziv-inner-block{
+        flex-basis: 360px;
+        padding: 40px;
+    }
+
+    .otziv-inner-block:nth-child(3){
+        display: block;
+    }
+    
+    .form{
+        background: url(../images/formBg3.png);
+        @include bg;
+    }
+
+    .form-inner{
+        @include flex(row,flex-end,nowrap,null);
+    }
+
+    .form-inner-block{
+        flex-basis: 760px;
+    }
+}

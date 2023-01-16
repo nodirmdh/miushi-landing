@@ -1,0 +1,204 @@
+.set{
+    margin-top: 70px;
+}
+
+.new{
+	background: url(../images/newBg.png);
+	@include bg;
+	padding: 50px 0 80px 0;
+}
+
+.new-inner-head-list{
+	margin:0 0 50px 10px;
+	list-style: none;
+	@include flex(row,start,nowrap,null);
+	li{
+		flex-basis: 148px;
+	}
+}
+
+.new-inner-head-list__item{
+	@include text($openS,18px,none,none,$newList,600,auto);	
+}
+
+.active,
+.new-inner-head-list__item:hover{
+	color:$headerLink;
+}
+
+.set-slider .slick-dots,
+.rol-slider .slick-dots,
+.pizza-slider .slick-dots,
+.wok-slider .slick-dots,
+.new-inner-slider .slick-dots{
+	@include dots;
+	bottom: -50px;
+}
+
+// classes begin
+
+.slide-el{
+	margin: 10px 0;
+	background-color: $white;
+}
+
+.slide-block{
+	max-width: 228px;
+    margin: 0 auto;
+	box-shadow: 0 0 10px 0 $headerDots;
+	border-radius: 8px;
+	overflow: hidden;
+	position: relative;
+	img{
+		@include img;
+		margin: 0 auto;
+	}
+}
+
+.slide-img{
+	min-height: 220px;
+	padding-top: 20px;
+}
+
+.slide-new{
+	@include position(absolute,10px,null,null,-30px,2);
+	background-color: $headerGreen;
+	@include text($robS,16px,none,none,$white,700,auto);	
+	padding: 8px;
+	width: 120px;
+	text-align: center;
+	transform: rotate(-45deg);
+}
+
+.slide-block-inner{
+	padding: 20px 15px 35px 15px;
+	text-align: center;
+}
+
+.slide-block-inner-head{
+	margin: 0 -10px;	
+	p:nth-child(1){
+		@include text($openS,20px,none,none,$black,700,auto);	
+	}
+	p:nth-child(2){
+		@include text($openS,12px,none,none,$black,400,auto);	
+		margin: 25px 0;
+	}
+}
+
+.slide-block-inner-select{
+	margin-bottom: 30px;
+}
+
+.slide-block-inner-select-el{
+	@include text($openS,12px,none,none,$black,400,auto);
+	@include flex(row,space-between,nowrap,null);
+}
+
+.slide-block-inner-select-el-add{
+	input{
+		width: 35px;
+		margin-left: 10px;
+		background-color: $headerLine;
+		border: none;
+		padding: 3px;
+		border-radius: 3px;
+	}
+}	
+
+.slide-block-inner-select-el-price{
+	span:nth-child(2){
+		margin-left: 12px;
+		padding: 0 5px;
+		border-radius: 3px;
+		background-color: $headerLink;
+		@include text(null,16px,none,none,$white,400,auto);
+	}
+}
+
+.slide-block-inner-select-option{
+	margin-top: 15px;
+	select{
+		width: 100%;
+		padding: 3px 0 3px 10px;
+		outline: none;
+		background-color: $headerLine;
+		border: none;
+		border-radius: 5px;
+		@include text($openS,12px,none,none,$black,300,auto);
+	}
+}
+
+
+.slide-block-inner-price{
+	@include flex(row,space-between,nowrap,null);
+	span:nth-child(1){
+		@include text($robS,22px,none,none,$black,400,auto);
+	}
+}
+
+.slide-block-inner-price-num{
+	@include flex(row,space-between,nowrap,null);
+	margin-top: 5px;
+	span{
+		margin-left: 15px;
+	}
+}
+
+.slide-block-inner__link{
+	position: relative;
+	display: inline-block;
+	margin-top: 30px;
+	background-color: $headerLink;
+	padding: 15px 80px 15px 30px;
+	@include text($openS,14px,uppercase,none,$white,600,auto);	
+	border-radius: 5px;
+
+	&:hover{
+		box-shadow: 0 3px 10px 0 $newList;
+	}
+
+	&:before{
+		content: "";
+		width: 26px;
+		height: 23px;
+		background: url(../images/onShopping.png);
+		@include bg;
+		@include position(absolute,23%,15%,null,null,2);
+	}
+}
+// classes end
+
+
+@include mediaQuery(min-width,768px){
+	.new{
+		padding: 70px 0 140px 0;
+	}
+
+	.block{
+		margin-bottom: 100px;
+	}
+}
+
+@include mediaQuery(min-width,1200px){
+	.title{
+        font-size: 60px;
+    }
+
+    .slide-block{
+		min-width: 263px;
+	}
+
+	.slide-block-inner{
+		padding: 30px 36px 39px 36px;
+	}
+
+	.set-slider .slick-dots,
+	.rol-slider .slick-dots,
+	.pizza-slider .slick-dots,
+	.wok-slider .slick-dots,
+	.new-inner-slider .slick-dots{
+		@include dots;
+		bottom: -40px;
+	}
+}

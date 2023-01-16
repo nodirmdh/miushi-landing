@@ -1,0 +1,109 @@
+@import "variables";
+
+*,
+*:after,
+*:before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@include font-face(LemonTuesday,'../fonts/lemonTuesday/Lemontuesday',400,normal);
+@include font-face(MyriadPro,'../fonts/myriad/MyriadPro-Regular',400,normal);
+@include font-face(OpenSans,'../fonts/openSans/OpenSans-Bold',700,normal);
+@include font-face(OpenSans,'../fonts/openSans/OpenSans-ExtraBold',800,normal);
+@include font-face(OpenSans,'../fonts/openSans/OpenSans-Italic',400,italic);
+@include font-face(OpenSans,'../fonts/openSans/OpenSans-Light',300,normal);
+@include font-face(OpenSans,'../fonts/openSans/OpenSans-Regular',400,normal);
+@include font-face(OpenSans,'../fonts/openSans/OpenSans-SemiBold',600,normal);
+@include font-face(Roboto,'../fonts/roboto/Roboto-Regular',400,normal);
+@include font-face(RobotoSlab,'../fonts/robotoSlab/RobotoSlab-Bold',700,normal);
+
+body.active{
+    position: relative;
+    overflow: hidden;
+    &:before{
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: $black;
+        opacity: 0.4;
+        z-index: 1;
+    }
+}
+
+.wrapper {
+	
+}
+
+.container{
+	max-width: 100%;
+	padding: 0 16px;      
+    margin: 0 auto;
+}
+
+.container__reset{
+	padding: 0;
+}
+
+.slick-slide,
+.slick-arrow{
+    outline: none;
+}
+
+
+.head-title{
+	text-align: center;
+}
+
+%template_Icon{
+	content: "";
+	width: 76px;
+	height: 30px;
+	@include bg;
+}
+
+.title{
+	@include text($lemon,44px,none,none,$blockTitle,400,null);
+	display: inline-block;
+	position: relative;
+	margin-bottom: 44px;
+	
+	&:before{
+		@extend %template_Icon;
+		@include position(absolute,20%,null,null,-90px,null);
+		background: url(../images/titleIconL.png);
+	}
+	&:after{
+		@extend %template_Icon;
+		@include position(absolute,20%,-90px,null,null,null);
+		background: url(../images/titleIconR.png);
+	}
+}
+
+.block{
+    margin-bottom: 60px;
+    position: relative;
+}
+
+
+@include mediaQuery(min-width,768px){
+	.container{
+		max-width: 720px;
+		padding: 0;
+	}
+}
+
+@include mediaQuery(min-width,1200px){
+	.container{
+		max-width: 1140px;
+	}
+}
+
+@import "header";
+@import "set";
+@import "reason";
+@import "footer";
